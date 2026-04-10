@@ -1,77 +1,69 @@
 # 🚀 ETL Pipeline using AWS S3, Glue Studio & Athena
 
 ## 📌 Project Overview
-This project demonstrates a complete ETL (Extract, Transform, Load) pipeline using AWS services:
+This project demonstrates a complete ETL (Extract, Transform, Load) pipeline using AWS services.
 
-- Amazon S3 (Storage)
-- AWS Glue (ETL Processing)
-- AWS Athena (Querying)
-
-The pipeline takes raw CSV data, processes it using Glue, and stores it as Parquet for efficient querying.
+The pipeline extracts raw CSV data from Amazon S3, transforms it using AWS Glue, and loads the processed data (Parquet format) back into S3 for efficient querying using Amazon Athena.
 
 ---
 
 ## 🏗️ Architecture
-S3 (Raw Data) → Glue ETL → S3 (Processed Data) → Athena Query
+S3 (Raw Data) → Glue ETL → S3 (Processed Data) → Athena
 
 ---
 
 ## 📂 Step 1: S3 Buckets (Input & Output)
 
-- Raw data stored in CSV format
-- Processed data stored in Parquet format
+- Raw Data Bucket (CSV files)
+- Processed Data Bucket (Parquet files)
 
-![S3 Buckets](https://github.com/YOUR_USERNAME/YOUR_REPO/assets/s3-buckets.png)
+![S3 Buckets](https://raw.githubusercontent.com/BHARGAVI200430/ETL-Pipeline-using-AWS-S3-Glue-Studio-Athena-project/main/assets/s3-buckets.png)
 
 ---
 
-## 📊 Step 2: Raw Data Table (Glue Data Catalog)
+## 📊 Step 2: Raw Data Table (AWS Glue)
 
-- Glue detects schema automatically
-- Table created from raw S3 data
+- Schema automatically detected
 
-![Glue Table](https://github.com/YOUR_USERNAME/YOUR_REPO/assets/glue-table.png)
+![Glue Table](https://raw.githubusercontent.com/BHARGAVI200430/ETL-Pipeline-using-AWS-S3-Glue-Studio-Athena-project/main/assets/glue-table.png)
 
 ---
 
 ## 🔄 Step 3: Glue ETL Job (Visual Flow)
 
-- Source: Glue Data Catalog
-- Target: S3 Bucket
-- Transformation handled in Glue Studio
+- Source → Glue Data Catalog
+- Target → S3
 
-![Glue ETL Job](https://github.com/YOUR_USERNAME/YOUR_REPO/assets/glue-etl.png)
+![Glue ETL](https://raw.githubusercontent.com/BHARGAVI200430/ETL-Pipeline-using-AWS-S3-Glue-Studio-Athena-project/main/assets/glue-etl.png)
 
 ---
 
-## ✅ Step 4: Job Run Success
+## ✅ Step 4: Job Execution
 
-- ETL job executed successfully
-- Status: SUCCEEDED
+- Status: **SUCCEEDED**
 
-![Job Success](https://github.com/YOUR_USERNAME/YOUR_REPO/assets/job-success.png)
+![Job Success](https://raw.githubusercontent.com/BHARGAVI200430/ETL-Pipeline-using-AWS-S3-Glue-Studio-Athena-project/main/assets/job-success.png)
 
 ---
 
 ## 📦 Step 5: Processed Data in S3
 
-- Output stored in Parquet format
-- `_SUCCESS` file confirms pipeline completion
+- Parquet format output
+- `_SUCCESS` file present
 
-![Processed Data](https://github.com/YOUR_USERNAME/YOUR_REPO/assets/processed-data.png)
+![Processed Data](https://raw.githubusercontent.com/BHARGAVI200430/ETL-Pipeline-using-AWS-S3-Glue-Studio-Athena-project/main/assets/processed-data.png)
 
 ---
 
 ## 🔍 Step 6: Glue Crawler
 
-- Crawler updates schema for processed data
-- Status: READY / SUCCEEDED
+- Updated schema for processed data
 
-![Crawler](https://github.com/YOUR_USERNAME/YOUR_REPO/assets/crawler.png)
+![Crawler](https://raw.githubusercontent.com/BHARGAVI200430/ETL-Pipeline-using-AWS-S3-Glue-Studio-Athena-project/main/assets/crawler.png)
 
 ---
 
-## 🧠 Step 7: Athena Query (Final Output)
+## 🧠 Step 7: Athena Query
 
 ```sql
 SELECT * 
